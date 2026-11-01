@@ -1,65 +1,100 @@
 # Machine Learning Projects
 
-A collection of machine learning projects and experiments using popular libraries like Scikit-learn, TensorFlow, and PyTorch. Each project includes datasets, training scripts, and analysis notebooks.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/vitorparras/Machine-Learning-Projects/badge)](https://scorecard.dev/viewer/?uri=github.com/vitorparras/Machine-Learning-Projects)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## Table of Contents
+Self-contained machine learning projects and experiments, each with its data
+source, training scripts and analysis notebooks, built with libraries such as
+scikit-learn, PyTorch and TensorFlow.
 
-- [Introduction](#introduction)
-- [Folder Structure](#folder-structure)
-- [Projects](#projects)
-- [How to Use](#how-to-use)
+> **Status:** starting. The repository structure and conventions are defined
+> below; projects are added over time. Contributions are welcome from day one.
+
+## Table of contents
+
+- [Goal](#goal)
+- [Planned structure](#planned-structure)
+- [Conventions](#conventions)
+- [How to use it](#how-to-use-it)
 - [Contributing](#contributing)
+- [Security](#security)
+- [Code of conduct](#code-of-conduct)
+- [License](#license)
 
-## Introduction
+## Goal
 
-This repository contains various machine learning projects, showcasing different techniques and approaches. Each project is self-contained, with its own datasets, scripts, and analysis. The aim is to provide practical examples of machine learning applications and to serve as a learning resource.
+Practical, reproducible examples of machine learning applied to concrete
+problems. Every project answers the same questions: what problem is being
+solved, what data is used, which techniques were tried, how the result was
+evaluated, and what was learned.
 
-## Folder Structure
+## Planned structure
 
-The repository is structured as follows:
-
+```text
+Machine-Learning-Projects/
+├── <project-name>/
+│   ├── README.md              # problem, data, approach, results, lessons
+│   ├── requirements.txt       # pinned dependencies for this project
+│   ├── data/
+│   │   ├── README.md          # where the data comes from, license, how to download
+│   │   └── get_data.py        # download script (datasets are not committed)
+│   ├── notebooks/
+│   │   └── 01-exploration.ipynb
+│   ├── src/
+│   │   ├── train.py
+│   │   └── evaluate.py
+│   └── models/                # ignored by Git; produced by train.py
+└── README.md
 ```
 
-    Machine-Learning-Projects/
-    ├── Project1/
-    │   ├── dataset/
-    │   │   ├── data.csv
-    │   ├── scripts/
-    │   │   ├── train.py
-    │   │   └── evaluate.py
-    │   ├── notebooks/
-    │   │   ├── analysis.ipynb
-    │   └── README.md
-    ├── Project2/
-    │   ├── dataset/
-    │   │   ├── data.csv
-    │   ├── scripts/
-    │   │   ├── train.py
-    │   │   └── evaluate.py
-    │   ├── notebooks/
-    │   │   ├── analysis.ipynb
-    │   └── README.md
-    └── README.md
+## Conventions
 
+- **One project, one folder**, independent from the others, with its own
+  `requirements.txt` and pinned versions.
+- **Datasets are not committed.** Each project has a download script and a
+  `data/README.md` stating the source and its license. Only small sample files
+  (a few KB) may be versioned.
+- **Reproducible runs**: fixed random seeds, recorded library versions, and
+  notebooks executed top to bottom before committing (outputs cleared when
+  large).
+- **Honest evaluation**: hold-out or cross-validation, the metric justified in
+  the README, and the baseline reported alongside the model.
+- **No secrets or personal data** in notebooks, scripts or data samples.
+
+## How to use it
+
+```bash
+git clone https://github.com/vitorparras/Machine-Learning-Projects.git
+cd Machine-Learning-Projects/<project-name>
+python -m venv .venv && source .venv/bin/activate   # on Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python data/get_data.py
+python src/train.py
 ```
 
-Each project folder includes:
-- `dataset/`: The data used for the project.
-- `scripts/`: Python scripts for training and evaluating models.
-- `notebooks/`: Jupyter notebooks for data analysis and visualization.
-
-## Projects
-
-- **Project1**: Description of Project1, including the problem it solves and the techniques used.
-- **Project2**: Description of Project2, including the problem it solves and the techniques used.
-
-## How to Use
-
-1. Navigate to the folder of the desired project.
-2. Open the `README.md` file for an overview of the project.
-3. Review the `notebooks` for detailed analysis and results.
-4. Customize the scripts and datasets as needed for your own experiments.
+Then open the notebooks for the analysis and results.
 
 ## Contributing
 
-If you would like to contribute to this repository, please fork the repository, create a new branch, make your changes, and submit a pull request. Contributions are welcome and appreciated! Ensure that your contributions include documentation and follow the coding standards of the project.
+New projects, improvements to existing ones and corrections are welcome. Please
+read [CONTRIBUTING.md](CONTRIBUTING.md) first and open a
+[suggestion](https://github.com/vitorparras/Machine-Learning-Projects/issues/new?template=content_suggestion.yml)
+before starting a large project. The `main` branch is protected and only
+receives changes through reviewed pull requests.
+
+## Security
+
+Found a problem in this repository's code, dependencies or configuration?
+Follow [SECURITY.md](SECURITY.md) and report it privately.
+
+## Code of conduct
+
+This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md). By
+participating you agree to uphold it.
+
+## License
+
+Licensed under the [MIT License](LICENSE). Copyright © Vitor Hugo Parras.
+Datasets keep their own licenses, stated in each project.
