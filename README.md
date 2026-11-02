@@ -1,6 +1,7 @@
 # Machine Learning Projects
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Code: AGPL-3.0](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
+[![Content: CC BY-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--SA%204.0-blue.svg)](LICENSE-CONTENT)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/vitorparras/Machine-Learning-Projects/badge)](https://scorecard.dev/viewer/?uri=github.com/vitorparras/Machine-Learning-Projects)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -96,5 +97,16 @@ participating you agree to uphold it.
 
 ## License
 
-Licensed under the [MIT License](LICENSE). Copyright © Vitor Hugo Parras.
+This repository uses two licenses:
+
+- **Code** (programs, scripts, configuration files and code samples):
+  [GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0).
+- **Content** (documents, explanations, images and other non-code material):
+  [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE-CONTENT)
+  (CC BY-SA 4.0).
+
+Both require attribution, and both require that modified versions you
+distribute, sell or run as a network service remain under the same license.
+Copyright © Vitor Hugo Parras.
+
 Datasets keep their own licenses, stated in each project.
